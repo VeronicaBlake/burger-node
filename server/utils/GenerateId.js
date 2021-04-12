@@ -1,7 +1,4 @@
-
-
-
-export const generateId = function() {
+export const generateId = function () {
   let result = ""
   const characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789"
 

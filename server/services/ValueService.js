@@ -2,7 +2,7 @@ import { dbContext } from "../db/DbContext";
 import { BadRequest } from "../utils/Errors";
 
 class ValuesService {
-  async find(query={}) {
+  async find(query = {}) {
     // let values = await dbContext.Values.find(query);
     return ["value1", "value2"];
   }

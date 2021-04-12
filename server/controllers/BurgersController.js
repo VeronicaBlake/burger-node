@@ -1,5 +1,5 @@
 import BaseController from "../utils/BaseController";
-import { burgersService } from "../services/BurgerService";
+import { burgersService } from "../services/BurgersService";
 
 export class BurgersController extends BaseController {
     constructor() {
@@ -13,7 +13,7 @@ export class BurgersController extends BaseController {
     //REVIEW why is there an underscore here? Is the req only if it's applying to a specific knight's item? (like req.id-> get one id?)
     async getAll(_, res, next) { //REVIEW where will getAll be called? 
         try {
-            const burgers = burgersService.find()
+            const burgers = await burgersService.find()
             return res.send(burgers);
         } catch (error) {
             next(error);

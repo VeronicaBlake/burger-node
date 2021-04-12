@@ -5,7 +5,7 @@ import { generateId } from "../utils/GenerateId";
 class BurgersService {
     async find(query = {}) {
         // let values = await dbContext.Values.find(query);
-        return ["value1", "value2"];
+        return [fakeDb.burgers];
     }
     async findById(id) {
         let value = await dbContext.Burgers.findById(id);

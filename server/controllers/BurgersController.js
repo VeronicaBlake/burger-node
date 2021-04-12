@@ -21,6 +21,7 @@ export class BurgersController extends BaseController {
     }
     async create(req, res, next) {
         try {
+            let data = await burgersService.create(req.body) //REVIEW why .body not .params.id
             res.send(req.body);
         } catch (error) {
             next(error);

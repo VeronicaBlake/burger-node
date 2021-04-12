@@ -19,13 +19,13 @@ class BurgersService {
         if (!value) {
             throw new BadRequest("Invalid Id - No Burger 4 U");
         }
-        fakeDb.burgers.filter(s => s.id !== id)
+        fakeDb.burgers = fakeDb.burgers.filter(s => s.id !== id)
     }
     create(newBurger) {
         newBurger.id = generateId()
 
         fakeDb.burgers.push(newBurger)
-        return newSpell
+        return newBurger
     }
 }
 

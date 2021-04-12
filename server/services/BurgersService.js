@@ -23,7 +23,6 @@ class BurgersService {
     }
     create(newBurger) {
         newBurger.id = generateId()
-
         fakeDb.burgers.push(newBurger)
         return newBurger
     }

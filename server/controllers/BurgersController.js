@@ -10,7 +10,6 @@ export class BurgersController extends BaseController {
             .post("", this.create)
             .delete("/:id", this.delete);
     }
-    //REVIEW why is there an underscore here? Is the req only if it's applying to a specific knight's item? (like req.id-> get one id?)
     async getAll(_, res, next) { //REVIEW where will getAll be called? 
         try {
             const burgers = await burgersService.find()
@@ -21,7 +20,7 @@ export class BurgersController extends BaseController {
     }
     async create(req, res, next) {
         try {
-            let data = await burgersService.create(req.body) //REVIEW why .body not .params.id
+            let data = await burgersService.create(req.body)
             res.send(data);
         } catch (error) {
             next(error);
@@ -29,9 +28,8 @@ export class BurgersController extends BaseController {
     }
     async getOne(req, res, next) {
         try {
-            //REVIEW Is it ok to name this just burger? will that mess me up later?
-            const burger = burgersService.findById(req.params.id)
-            return res.send(burger);
+            const burgers = burgersService.findById(req.params.id)
+            return res.send(burgers);
         } catch (error) {
             next(error);
         }
